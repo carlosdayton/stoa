@@ -20,6 +20,7 @@
       --line: #ddc9a5;
       --dark: #1c120d;
       --shadow: 0 24px 70px rgba(35, 20, 11, 0.24);
+      --shadow-soft: 0 14px 40px rgba(63, 38, 19, 0.14);
       --radius: 8px;
       --max: 1120px;
     }
@@ -30,13 +31,20 @@
 
     body {
       margin: 0;
-      background: var(--bg);
+      background:
+        radial-gradient(circle at 8% 4%, rgba(183, 69, 31, 0.08), transparent 30%),
+        radial-gradient(circle at 88% 12%, rgba(201, 154, 86, 0.12), transparent 28%),
+        linear-gradient(180deg, #fbf4e6 0%, #f4e7cf 100%);
       color: var(--ink);
       font-family: Georgia, "Times New Roman", serif;
       line-height: 1.55;
     }
 
     a { color: inherit; }
+
+    ::selection {
+      background: rgba(183, 69, 31, 0.22);
+    }
 
     .topbar {
       position: sticky;
@@ -193,9 +201,57 @@
       background: rgba(255, 255, 255, 0.06);
     }
 
+    .hero-proof {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      max-width: 620px;
+      margin-top: 24px;
+    }
+
+    .hero-proof div {
+      padding: 14px 16px;
+      border: 1px solid rgba(232, 199, 126, 0.24);
+      border-radius: 8px;
+      background: rgba(255, 250, 240, 0.07);
+    }
+
+    .hero-proof strong {
+      display: block;
+      color: #fff9ed;
+      font-family: Arial, sans-serif;
+      font-size: 1.05rem;
+      line-height: 1;
+    }
+
+    .hero-proof span {
+      display: block;
+      margin-top: 7px;
+      color: rgba(255, 247, 232, 0.7);
+      font-family: Arial, sans-serif;
+      font-size: 0.78rem;
+      line-height: 1.35;
+    }
+
     .product-stack {
       position: relative;
       min-height: 520px;
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 28px;
+      right: -8px;
+      z-index: 3;
+      padding: 12px 14px;
+      border: 1px solid rgba(232, 199, 126, 0.45);
+      border-radius: 8px;
+      background: rgba(28, 18, 13, 0.82);
+      color: #fff7e8;
+      font-family: Arial, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 800;
+      box-shadow: 0 16px 34px rgba(0, 0, 0, 0.24);
     }
 
     .book {
@@ -379,6 +435,102 @@
       border-color: rgba(232, 199, 126, 0.22);
     }
 
+
+    .showcase {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 38px;
+      align-items: center;
+    }
+
+    .page-spread {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      perspective: 900px;
+    }
+
+    .sample-page {
+      min-height: 410px;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: linear-gradient(180deg, rgba(255, 250, 240, 0.96), rgba(244, 231, 205, 0.96));
+      box-shadow: var(--shadow-soft);
+    }
+
+    .sample-page:first-child {
+      transform: rotateY(5deg);
+    }
+
+    .sample-page:last-child {
+      transform: rotateY(-5deg);
+    }
+
+    .sample-page small {
+      display: block;
+      margin-bottom: 18px;
+      color: var(--terracotta);
+      font-family: Arial, sans-serif;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .sample-page h3 {
+      margin-bottom: 16px;
+      color: var(--terracotta-dark);
+      font-size: 1.9rem;
+    }
+
+    .sample-line {
+      height: 8px;
+      margin-bottom: 10px;
+      border-radius: 999px;
+      background: #d8c49e;
+    }
+
+    .sample-line.dark {
+      width: 56%;
+      background: var(--terracotta);
+    }
+
+    .value-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .value-item {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(118, 43, 20, 0.12);
+    }
+
+    .value-item b {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--terracotta-dark);
+      color: #fff9ed;
+      font-family: Arial, sans-serif;
+    }
+
+    .value-item h3 {
+      margin-bottom: 4px;
+      color: var(--terracotta-dark);
+      font-size: 1.25rem;
+    }
+
+    .value-item p {
+      margin: 0;
+      color: var(--muted);
+    }
     .offer {
       display: grid;
       grid-template-columns: 1fr 390px;
@@ -392,6 +544,19 @@
       border-radius: var(--radius);
       background: var(--paper);
       box-shadow: var(--shadow);
+    }
+
+    .offer-ribbon {
+      display: inline-flex;
+      margin-bottom: 18px;
+      padding: 8px 11px;
+      border-radius: 999px;
+      background: rgba(183, 69, 31, 0.12);
+      color: var(--terracotta-dark);
+      font-family: Arial, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
     }
 
     .offer-box h2 {
@@ -516,7 +681,29 @@
       }
 
       .product-stack {
-        min-height: 380px;
+      position: relative;
+      min-height: 520px;
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 28px;
+      right: -8px;
+      z-index: 3;
+      padding: 12px 14px;
+      border: 1px solid rgba(232, 199, 126, 0.45);
+      border-radius: 8px;
+      background: rgba(28, 18, 13, 0.82);
+      color: #fff7e8;
+      font-family: Arial, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 800;
+      box-shadow: 0 16px 34px rgba(0, 0, 0, 0.24);
+    }
+
+      .product-badge {
+        right: calc(50% - 156px);
+        top: 12px;
       }
 
       .book {
@@ -540,17 +727,24 @@
       .bonus-grid,
       .audience-grid,
       .faq-grid,
+      .showcase,
       .offer {
         grid-template-columns: 1fr;
       }
-    }
 
+      .showcase .section-head {
+        margin-bottom: 0;
+      }
+    }
     @media (max-width: 620px) {
       .nav { height: 58px; }
       .brand { font-size: 0.85rem; }
       .nav .btn { display: none; }
       .hero-actions .btn { width: 100%; }
       .section { padding: 62px 0; }
+      .hero-proof { grid-template-columns: 1fr; }
+      .page-spread { grid-template-columns: 1fr; }
+      .sample-page { min-height: 290px; transform: none !important; }
       .card { padding: 20px; }
       .offer-box { padding: 24px; }
       .sticky-buy.show { display: inline-flex; }
@@ -604,9 +798,15 @@
             <span>Formato PDF</span>
             <span>Do zero ao contemporâneo</span>
           </div>
+          <div class="hero-proof" aria-label="Resumo do material">
+            <div><strong>23 capítulos</strong><span>Da Grécia antiga aos debates atuais</span></div>
+            <div><strong>6 partes</strong><span>Organização cronológica para estudar melhor</span></div>
+            <div><strong>3 bônus</strong><span>Trilha de leitura, glossário e método</span></div>
+          </div>
         </div>
 
         <div class="product-stack" aria-label="Mockup do produto">
+          <div class="product-badge">Material completo em PDF</div>
           <div class="book">
             <small>Curso introdutório</small>
             <strong>História da<br>Filosofia</strong>
@@ -646,6 +846,48 @@
       </div>
     </section>
 
+
+    <section class="section alt">
+      <div class="wrap showcase">
+        <div class="page-spread" aria-label="Prévia visual do guia">
+          <div class="sample-page">
+            <small>Prévia do guia</small>
+            <h3>Conceitos-chave</h3>
+            <div class="sample-line dark"></div>
+            <div class="sample-line" style="width: 92%;"></div>
+            <div class="sample-line" style="width: 84%;"></div>
+            <div class="sample-line" style="width: 76%;"></div>
+            <br>
+            <div class="sample-line" style="width: 64%;"></div>
+            <div class="sample-line" style="width: 88%;"></div>
+            <div class="sample-line" style="width: 70%;"></div>
+          </div>
+          <div class="sample-page">
+            <small>Leitura guiada</small>
+            <h3>Autores e obras</h3>
+            <div class="sample-line dark"></div>
+            <div class="sample-line" style="width: 82%;"></div>
+            <div class="sample-line" style="width: 95%;"></div>
+            <div class="sample-line" style="width: 68%;"></div>
+            <br>
+            <div class="sample-line" style="width: 78%;"></div>
+            <div class="sample-line" style="width: 90%;"></div>
+            <div class="sample-line" style="width: 58%;"></div>
+          </div>
+        </div>
+
+        <div class="section-head" style="margin-bottom: 0;">
+          <div class="eyebrow">Por dentro do material</div>
+          <h2>Mais que um resumo: um mapa para pensar melhor.</h2>
+          <p>O guia combina linha histórica, explicação conceitual e orientação prática para você entender quem são os autores, quais problemas eles enfrentaram e por que essas ideias ainda importam.</p>
+          <div class="value-list">
+            <div class="value-item"><b>1</b><div><h3>Contexto antes do conceito</h3><p>Você entende o problema que levou cada escola a surgir.</p></div></div>
+            <div class="value-item"><b>2</b><div><h3>Autores sem virar lista solta</h3><p>As ideias aparecem conectadas em uma conversa histórica.</p></div></div>
+            <div class="value-item"><b>3</b><div><h3>Material bonito para estudar</h3><p>Visual de e-book premium, com leitura agradável no celular, tablet ou computador.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="section band" id="conteudo">
       <div class="wrap">
         <div class="section-head">
@@ -820,10 +1062,4 @@
   <a class="btn sticky-buy" href="#" data-checkout>Comprar agora</a>
 </body>
 </html>
-
-
-
-
-
-
 
