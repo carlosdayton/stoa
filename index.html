@@ -1,0 +1,827 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>História da Filosofia | Guia em PDF</title>
+  <meta name="description" content="Um guia visual em PDF para entender a história da filosofia, seus principais autores, ideias, obras e escolas." />
+  <style>
+    :root {
+      --bg: #fbf4e6;
+      --paper: #fffaf0;
+      --paper-deep: #efe1c6;
+      --ink: #271f16;
+      --muted: #675849;
+      --soft: #8b7a64;
+      --terracotta: #b7451f;
+      --terracotta-dark: #762b14;
+      --gold: #c99a56;
+      --olive: #596943;
+      --line: #ddc9a5;
+      --dark: #1c120d;
+      --shadow: 0 24px 70px rgba(35, 20, 11, 0.24);
+      --radius: 8px;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.55;
+    }
+
+    a { color: inherit; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(251, 244, 230, 0.94);
+      border-bottom: 1px solid rgba(118, 43, 20, 0.16);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav {
+      width: min(var(--max), calc(100% - 32px));
+      height: 64px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      font-family: Arial, sans-serif;
+      font-weight: 800;
+      color: var(--terracotta-dark);
+      letter-spacing: 0;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .navlinks {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-family: Arial, sans-serif;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .navlinks a {
+      text-decoration: none;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border: 1px solid transparent;
+      border-radius: 6px;
+      background: var(--terracotta);
+      color: #fff9ed;
+      font-family: Arial, sans-serif;
+      font-weight: 800;
+      text-decoration: none;
+      box-shadow: 0 12px 28px rgba(118, 43, 20, 0.24);
+      transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      background: var(--terracotta-dark);
+      box-shadow: 0 16px 34px rgba(118, 43, 20, 0.3);
+    }
+
+    .btn.secondary {
+      background: rgba(255, 250, 240, 0.08);
+      border-color: rgba(255, 250, 240, 0.44);
+      color: #fff7e8;
+      box-shadow: none;
+    }
+
+    .hero {
+      min-height: calc(100vh - 96px);
+      display: grid;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(28, 18, 13, 0.94) 0%, rgba(60, 28, 14, 0.82) 44%, rgba(60, 28, 14, 0.26) 100%),
+        url("assets/hero-filosofia.png") center right / cover no-repeat;
+      color: #fff7e8;
+    }
+
+    .hero-inner {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      padding: 74px 0 54px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 430px;
+      gap: 58px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      color: #e8c77e;
+      font-family: Arial, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 36px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      font-weight: 500;
+      line-height: 1.05;
+    }
+
+    h1 {
+      max-width: 720px;
+      font-size: clamp(3.1rem, 7vw, 6.2rem);
+      color: #fff9ed;
+    }
+
+    .hero p {
+      max-width: 610px;
+      margin: 24px 0 0;
+      color: rgba(255, 247, 232, 0.86);
+      font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+      font-family: Arial, sans-serif;
+      color: rgba(255, 247, 232, 0.8);
+      font-size: 0.88rem;
+    }
+
+    .trust-row span {
+      border: 1px solid rgba(232, 199, 126, 0.35);
+      border-radius: 999px;
+      padding: 7px 11px;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .product-stack {
+      position: relative;
+      min-height: 520px;
+    }
+
+    .book {
+      position: absolute;
+      inset: 0 38px 0 auto;
+      width: 320px;
+      height: 470px;
+      padding: 32px 28px;
+      border: 1px solid rgba(232, 199, 126, 0.58);
+      border-radius: 6px;
+      background:
+        radial-gradient(circle at 26% 14%, rgba(232, 199, 126, 0.24), transparent 32%),
+        linear-gradient(155deg, #9a3715 0%, #6e230c 46%, #34150b 100%);
+      box-shadow: var(--shadow);
+      transform: rotate(2deg);
+    }
+
+    .book::before {
+      content: "";
+      position: absolute;
+      inset: 16px;
+      border: 1px solid rgba(255, 247, 232, 0.36);
+      border-radius: 4px;
+      pointer-events: none;
+    }
+
+    .book small {
+      display: block;
+      color: #e8c77e;
+      font-family: Arial, sans-serif;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 82px;
+    }
+
+    .book strong {
+      display: block;
+      color: #fff9ed;
+      font-size: 3.45rem;
+      line-height: 0.96;
+      font-weight: 500;
+    }
+
+    .book em {
+      display: block;
+      margin-top: 20px;
+      color: #ead9b8;
+      font-style: italic;
+      font-size: 1.05rem;
+    }
+
+    .preview-sheet {
+      position: absolute;
+      right: -34px;
+      bottom: 18px;
+      width: 208px;
+      min-height: 282px;
+      padding: 22px;
+      border-radius: 6px;
+      background: #fffaf0;
+      box-shadow: 0 24px 58px rgba(0, 0, 0, 0.26);
+      color: var(--ink);
+    }
+
+    .preview-sheet .line {
+      height: 8px;
+      margin-bottom: 10px;
+      border-radius: 999px;
+      background: #dfcfad;
+    }
+
+    .preview-sheet .line:nth-child(1) { width: 62%; background: var(--terracotta); }
+    .preview-sheet .line:nth-child(2) { width: 88%; }
+    .preview-sheet .line:nth-child(3) { width: 78%; }
+    .preview-sheet .line:nth-child(4) { width: 92%; }
+
+    .section {
+      padding: 86px 0;
+    }
+
+    .section.tight {
+      padding: 62px 0;
+    }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 34px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(2.1rem, 4vw, 3.55rem);
+      color: var(--terracotta-dark);
+    }
+
+    .section-head p {
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .pain-grid,
+    .content-grid,
+    .bonus-grid,
+    .audience-grid,
+    .faq-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .pain-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .content-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .bonus-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .audience-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .card {
+      background: rgba(255, 250, 240, 0.72);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+
+    .card h3 {
+      color: var(--terracotta-dark);
+      font-size: 1.35rem;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      margin-bottom: 15px;
+      border-radius: 50%;
+      background: var(--terracotta-dark);
+      color: #fff9ed;
+      font-family: Arial, sans-serif;
+      font-weight: 800;
+      font-size: 0.85rem;
+    }
+
+    .band {
+      background: var(--dark);
+      color: #fff7e8;
+    }
+
+    .band .section-head h2,
+    .band .card h3 {
+      color: #fff9ed;
+    }
+
+    .band .section-head p,
+    .band .card p {
+      color: rgba(255, 247, 232, 0.74);
+    }
+
+    .band .card {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(232, 199, 126, 0.22);
+    }
+
+    .offer {
+      display: grid;
+      grid-template-columns: 1fr 390px;
+      gap: 34px;
+      align-items: stretch;
+    }
+
+    .offer-box {
+      padding: 32px;
+      border: 1px solid rgba(118, 43, 20, 0.22);
+      border-radius: var(--radius);
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+
+    .offer-box h2 {
+      color: var(--terracotta-dark);
+      font-size: 2.4rem;
+      margin-bottom: 14px;
+    }
+
+    .price {
+      margin: 20px 0 6px;
+      color: var(--terracotta-dark);
+      font-family: Arial, sans-serif;
+      font-size: clamp(2.4rem, 5vw, 4.1rem);
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .price small {
+      font-size: 1rem;
+      color: var(--soft);
+      vertical-align: super;
+    }
+
+    .checklist {
+      list-style: none;
+      margin: 22px 0 0;
+      padding: 0;
+      display: grid;
+      gap: 11px;
+      font-family: Arial, sans-serif;
+      color: var(--muted);
+    }
+
+    .checklist li {
+      display: grid;
+      grid-template-columns: 24px 1fr;
+      gap: 8px;
+      align-items: start;
+    }
+
+    .checklist li::before {
+      content: "✓";
+      color: var(--olive);
+      font-weight: 900;
+    }
+
+    .guarantee {
+      margin-top: 16px;
+      padding: 16px;
+      border-left: 4px solid var(--olive);
+      background: #f2ead7;
+      color: var(--muted);
+      border-radius: 6px;
+      font-size: 0.95rem;
+    }
+
+    .faq-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .final-cta {
+      text-align: center;
+      padding: 86px 0;
+      background:
+        linear-gradient(180deg, rgba(251, 244, 230, 0.92), rgba(239, 225, 198, 0.94)),
+        url("assets/hero-filosofia.png") center / cover no-repeat;
+    }
+
+    .final-cta h2 {
+      max-width: 780px;
+      margin: 0 auto;
+      color: var(--terracotta-dark);
+      font-size: clamp(2.3rem, 5vw, 4rem);
+    }
+
+    .final-cta p {
+      max-width: 640px;
+      margin: 18px auto 28px;
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    footer {
+      padding: 28px 0;
+      background: var(--dark);
+      color: rgba(255, 247, 232, 0.66);
+      font-family: Arial, sans-serif;
+      font-size: 0.85rem;
+    }
+
+    footer .wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .sticky-buy {
+      position: fixed;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      z-index: 30;
+      display: none;
+      min-height: 52px;
+      border-radius: 7px;
+    }
+
+    @media (max-width: 920px) {
+      .navlinks a:not(.btn) { display: none; }
+
+      .hero {
+        min-height: auto;
+        background:
+          linear-gradient(180deg, rgba(28, 18, 13, 0.96) 0%, rgba(60, 28, 14, 0.86) 58%, rgba(60, 28, 14, 0.42) 100%),
+          url("assets/hero-filosofia.png") center / cover no-repeat;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        padding: 62px 0 42px;
+      }
+
+      .product-stack {
+        min-height: 380px;
+      }
+
+      .book {
+        left: 50%;
+        right: auto;
+        transform: translateX(-56%) rotate(2deg);
+        width: 260px;
+        height: 370px;
+      }
+
+      .book strong { font-size: 2.65rem; }
+
+      .preview-sheet {
+        right: calc(50% - 180px);
+        width: 190px;
+        min-height: 238px;
+      }
+
+      .pain-grid,
+      .content-grid,
+      .bonus-grid,
+      .audience-grid,
+      .faq-grid,
+      .offer {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .nav { height: 58px; }
+      .brand { font-size: 0.85rem; }
+      .nav .btn { display: none; }
+      .hero-actions .btn { width: 100%; }
+      .section { padding: 62px 0; }
+      .card { padding: 20px; }
+      .offer-box { padding: 24px; }
+      .sticky-buy.show { display: inline-flex; }
+    }
+  </style>
+</head>
+<body>
+  <script>
+    const CHECKOUT_URL = "https://SEU-LINK-DA-CAKTO-AQUI";
+
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll("[data-checkout]").forEach((link) => {
+        link.href = CHECKOUT_URL;
+      });
+
+      const stickyBuy = document.querySelector(".sticky-buy");
+      const toggleSticky = () => {
+        if (!stickyBuy) return;
+        stickyBuy.classList.toggle("show", window.scrollY > 620);
+      };
+      toggleSticky();
+      window.addEventListener("scroll", toggleSticky, { passive: true });
+    });
+  </script>
+
+  <header class="topbar">
+    <nav class="nav" aria-label="Navegação principal">
+      <div class="brand">História da Filosofia</div>
+      <div class="navlinks">
+        <a href="#conteudo">Conteúdo</a>
+        <a href="#bonus">Bônus</a>
+        <a href="#oferta">Oferta</a>
+        <a class="btn" href="#" data-checkout>Quero acessar</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <div class="eyebrow">Guia em PDF para estudar filosofia</div>
+          <h1>História da Filosofia</h1>
+          <p>Entenda os principais autores, escolas, obras e ideias da filosofia ocidental em um material visual, organizado e direto ao ponto.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#" data-checkout>Comprar agora</a>
+            <a class="btn secondary" href="#conteudo">Ver o que vem no guia</a>
+          </div>
+          <div class="trust-row" aria-label="Características do produto">
+            <span>Acesso imediato</span>
+            <span>Formato PDF</span>
+            <span>Do zero ao contemporâneo</span>
+          </div>
+        </div>
+
+        <div class="product-stack" aria-label="Mockup do produto">
+          <div class="book">
+            <small>Curso introdutório</small>
+            <strong>História da<br>Filosofia</strong>
+            <em>Das origens gregas ao pensamento contemporâneo</em>
+          </div>
+          <div class="preview-sheet" aria-hidden="true">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <br>
+            <div class="line" style="width: 64%;"></div>
+            <div class="line" style="width: 92%;"></div>
+            <div class="line" style="width: 82%;"></div>
+            <div class="line" style="width: 70%;"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tight">
+      <div class="wrap">
+        <div class="pain-grid">
+          <article class="card">
+            <h3>Você não precisa começar por textos impossíveis</h3>
+            <p>O guia organiza o caminho para você entender os problemas antes de encarar obras mais densas.</p>
+          </article>
+          <article class="card">
+            <h3>Autores conectados em uma linha histórica</h3>
+            <p>Em vez de estudar nomes soltos, você vê como uma escola responde, corrige ou rompe com a anterior.</p>
+          </article>
+          <article class="card">
+            <h3>Um material para consultar sempre</h3>
+            <p>Use como introdução, revisão, apoio para aulas, criação de conteúdo ou organização dos seus estudos.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section band" id="conteudo">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">O que você vai estudar</div>
+          <h2>Um mapa claro de mais de 2.600 anos de pensamento.</h2>
+          <p>O material percorre os períodos centrais da filosofia ocidental com linguagem acessível, precisão conceitual e foco no que realmente importa.</p>
+        </div>
+
+        <div class="content-grid">
+          <article class="card">
+            <span class="number">I</span>
+            <h3>Filosofia Antiga</h3>
+            <p>Pré-socráticos, sofistas, Sócrates, Platão, Aristóteles, estoicismo, epicurismo, cinismo e ceticismo.</p>
+          </article>
+          <article class="card">
+            <span class="number">II</span>
+            <h3>Filosofia Medieval</h3>
+            <p>Patrística, Santo Agostinho, escolástica, Tomás de Aquino, o problema dos universais e o fim da Idade Média.</p>
+          </article>
+          <article class="card">
+            <span class="number">III</span>
+            <h3>Filosofia Moderna</h3>
+            <p>Renascimento, Maquiavel, racionalismo, empirismo, Iluminismo, contrato social e Kant.</p>
+          </article>
+          <article class="card">
+            <span class="number">IV</span>
+            <h3>Século XIX</h3>
+            <p>Hegel, utilitarismo, liberalismo, Marx, Kierkegaard, Schopenhauer e Nietzsche.</p>
+          </article>
+          <article class="card">
+            <span class="number">V</span>
+            <h3>Filosofia Contemporânea</h3>
+            <p>Fenomenologia, existencialismo, filosofia analítica, Escola de Frankfurt, Foucault, Derrida, ciência, mente e justiça.</p>
+          </article>
+          <article class="card">
+            <span class="number">VI</span>
+            <h3>Guia de aprofundamento</h3>
+            <p>Trilha de leitura, glossário essencial, obras fundamentais e um método prático para pensar como filósofo.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="bonus">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Além do conteúdo principal</div>
+          <h2>Bônus que tornam o estudo mais prático.</h2>
+          <p>A ideia é que você compreenda a história, mas também saiba por onde continuar depois.</p>
+        </div>
+
+        <div class="bonus-grid">
+          <article class="card">
+            <h3>Trilha de leitura</h3>
+            <p>Uma sequência de obras para começar sem se perder entre autores difíceis e edições diferentes.</p>
+          </article>
+          <article class="card">
+            <h3>Glossário essencial</h3>
+            <p>Termos como metafísica, epistemologia, dialética, empirismo, idealismo, niilismo e hermenêutica explicados com clareza.</p>
+          </article>
+          <article class="card">
+            <h3>Método de estudo</h3>
+            <p>Um roteiro para identificar perguntas, reconstruir argumentos, comparar autores e formular boas objeções.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section band">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Para quem é</div>
+          <h2>Feito para quem quer entender filosofia com ordem.</h2>
+        </div>
+
+        <div class="audience-grid">
+          <article class="card">
+            <h3>Iniciantes</h3>
+            <p>Para quem quer começar do zero e precisa de um mapa confiável.</p>
+          </article>
+          <article class="card">
+            <h3>Estudantes</h3>
+            <p>Para revisar escolas, autores, obras e conceitos antes de provas ou aulas.</p>
+          </article>
+          <article class="card">
+            <h3>Criadores</h3>
+            <p>Para transformar temas filosóficos em roteiros, posts e aulas com mais segurança.</p>
+          </article>
+          <article class="card">
+            <h3>Curiosos</h3>
+            <p>Para quem ama ideias, mas não quer depender de vídeos soltos e explicações fragmentadas.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="oferta">
+      <div class="wrap offer">
+        <div>
+          <div class="section-head">
+            <div class="eyebrow">Oferta de lançamento</div>
+            <h2>Acesse o guia completo e comece a estudar hoje.</h2>
+            <p>Depois do pagamento, a Cakto cuida da confirmação e entrega do produto digital conforme sua configuração de checkout.</p>
+          </div>
+
+          <ul class="checklist">
+            <li>PDF completo sobre a história da filosofia ocidental</li>
+            <li>Principais autores, obras, escolas e conceitos</li>
+            <li>Organização cronológica para entender a evolução das ideias</li>
+            <li>Boxes de reflexão, conceitos-chave, tabelas e linhas do tempo</li>
+            <li>Bônus de leitura, glossário e método de estudo</li>
+          </ul>
+        </div>
+
+        <aside class="offer-box" aria-label="Resumo da oferta">
+          <h2>Guia em PDF</h2>
+          <p>História da Filosofia: das origens gregas ao pensamento contemporâneo.</p>
+          <div class="price"><small>R$</small> 29,90</div>
+          <p style="color: var(--soft); margin: 0;">Preço sugerido. Altere no checkout da Cakto conforme sua estratégia.</p>
+          <a class="btn" style="width: 100%; margin-top: 22px;" href="#" data-checkout>Quero acessar agora</a>
+          <div class="guarantee">
+            Compra segura pela Cakto. Produto digital com acesso liberado após a confirmação do pagamento.
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section tight">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Perguntas frequentes</div>
+          <h2>Antes de comprar.</h2>
+        </div>
+
+        <div class="faq-grid">
+          <article class="card">
+            <h3>O material é para iniciantes?</h3>
+            <p>Sim. Ele foi pensado para organizar a jornada de quem está começando, sem abandonar rigor conceitual.</p>
+          </article>
+          <article class="card">
+            <h3>Recebo como?</h3>
+            <p>A entrega deve ser configurada no checkout da Cakto. Após o pagamento, o cliente recebe acesso ao arquivo digital.</p>
+          </article>
+          <article class="card">
+            <h3>É um curso em vídeo?</h3>
+            <p>Não. É um guia em PDF, estruturado como uma aula em formato de livro.</p>
+          </article>
+          <article class="card">
+            <h3>Posso estudar pelo celular?</h3>
+            <p>Sim. Por ser PDF, você pode abrir no celular, tablet ou computador.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="wrap">
+        <h2>Comece pela visão geral. Depois aprofunde com muito mais clareza.</h2>
+        <p>Leve um mapa completo para entender a filosofia como uma conversa viva entre autores, épocas e problemas.</p>
+        <a class="btn" href="#" data-checkout>Comprar o guia em PDF</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>História da Filosofia | Produto digital em PDF</span>
+      <span>Substitua este rodapé pelo nome do seu perfil, CNPJ ou informações legais.</span>
+    </div>
+  </footer>
+
+  <a class="btn sticky-buy" href="#" data-checkout>Comprar agora</a>
+</body>
+</html>
+
+
+
+
+
